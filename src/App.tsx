@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import AllProducts from "./pages/AllProducts"
 import Inspirations from "./pages/Inspirations"
 import About from "./pages/About"
@@ -24,6 +24,7 @@ const App = () => {
       <Header routes={routes} />
       <Container maxWidth="lg">
         <Switch>
+          <Redirect exact path="/" to="/all-products" />
           {renderRoutes()}
         </Switch>
       </Container>
