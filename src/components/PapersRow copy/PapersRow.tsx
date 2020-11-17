@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { Grid, Typography, Paper, makeStyles } from '@material-ui/core'
-import { Box } from '../../components'
+import { Box } from '..'
 
 type ConfigPaper = {
     background: any
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-const PapersRow: FC<Props> = ({ config, m, p, boxClassName }) => {
+const Gallery: FC<Props> = ({ config, m, p, boxClassName }) => {
     const classes = useStyles()
 
     return (
@@ -42,4 +42,4 @@ const PapersRow: FC<Props> = ({ config, m, p, boxClassName }) => {
 }
 
 
-export default PapersRow
+export default Gallery

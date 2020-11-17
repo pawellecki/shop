@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) =>
       backgroundColor: theme.palette.secondary.main,
       [theme.breakpoints.down("sm")]: {
         display: "block",
-      },
+      }
     },
     typographyBox: {
       width: 200,
