@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
+import { Grid } from '@material-ui/core'
 import paper1 from "../../assets/paper1.jpg"
 import paper2 from "../../assets/paper2.jpg"
 import paper3 from "../../assets/paper3.jpg"
-import { Gallery, PapersRow } from "../../components"
+import { Sidebar, Gallery, PapersRow } from "../../components"
 
 const papersRowConfig = [
     {
@@ -22,11 +23,36 @@ const papersRowConfig = [
     },
 ]
 
-const AllProducts: FC = () =>
-    <>
-        <Gallery images={[paper1, paper2, paper3]} />
-        <PapersRow config={papersRowConfig} />
-    </>
+const sidebarConfig = [
+    { path: '#', title: 'Paper clips' },
+    { path: '#', title: 'Post-it notes' },
+    { path: '#', title: 'Staples' },
+    { path: '#', title: 'Hole punches' },
+    { path: '#', title: 'Binders' },
+    { path: '#', title: 'Staplers' },
+    { path: '#', title: 'Laminators' },
+    { path: '#', title: 'Writing utensils' },
+    { path: '#', title: 'Computer' },
+    { path: '#', title: 'Printers' },
+    { path: '#', title: 'Fax machines' },
+    { path: '#', title: 'Photocopiers' },
+    { path: '#', title: 'Cash registers' },
+    { path: '#', title: 'Office furniture' },
+    { path: '#', title: 'Chairs' },
+    { path: '#', title: 'Cubicles' },
+    { path: '#', title: 'Filing cabinet' },
+    { path: '#', title: 'Armoire desks' },
+]
 
+const AllProducts: FC = () =>
+    <Grid container spacing={2} >
+        <Grid item xs={3} >
+            <Sidebar config={sidebarConfig} />
+        </Grid>
+        <Grid item xs={9}  >
+            <Gallery images={[paper1, paper2, paper3]} />
+            <PapersRow config={papersRowConfig} />
+        </Grid>
+    </Grid>
 
 export default AllProducts

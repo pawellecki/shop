@@ -29,7 +29,7 @@ const PapersRow: FC<Props> = ({ config, m, p, boxClassName }) => {
         <Box m={m} p={p} className={boxClassName}>
             <Grid container spacing={2}>
                 {config.map(({ background, title, description }: ConfigPaper) =>
-                    <Grid item xs={4}>
+                    <Grid key={title} item xs={4}>
                         <Paper style={{ backgroundImage: `url(${background})` }} className={classes.paper}>
                             <Typography variant="h6">{title}</Typography>
                             <Typography>{description}</Typography>

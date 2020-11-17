@@ -39,7 +39,7 @@ const Gallery: FC<Props> = ({ images, maxImagesLength = 3, m, p, boxClassName })
             <Grid container spacing={1} className={classes.thumbnails}>
                 {images.map((image: any, index: number) =>
                     index < maxImagesLength ? (
-                        <Grid item xs={4}>
+                        <Grid key={index} item xs={4}>
                             <img src={image} onClick={() => handleSetChosenImageIndex(index)} alt='thumbnail' />
                         </Grid>
                     ) : null
