@@ -17,7 +17,7 @@ const CollapseContainer: FC<Props> = ({ collapsedHeight = '150px', m, p, boxClas
   return (
     <Box m={m} p={p} className={boxClassName}>
       <Collapse in={isOpen} collapsedHeight={collapsedHeight}>{children}</Collapse>
-      <Button variant='outlined' color='secondary' onClick={handleSetIsOpen}>{isOpen ? 'Hide' : 'Show'}</Button>
+      <Button variant='outlined' color='secondary' onClick={handleSetIsOpen}>{isOpen ? 'Hide' : 'Read more'}</Button>
     </Box>
   )
 }

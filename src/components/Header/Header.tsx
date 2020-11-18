@@ -69,7 +69,6 @@ const useStyles = makeStyles((theme) => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -107,13 +106,30 @@ const useStyles = makeStyles((theme) => ({
     '& p': {
       margin: '0 10px'
     },
-    
+    '& a': {
+      position: 'relative'
+    },
     '& button, & p': {
       [theme.breakpoints.down("sm")]: {
         display: "none",
       },
     }
   },
+  mobileCartLength: {
+    position: 'absolute',
+    top: -14,
+    right: -11,
+    width: 18,
+    height: 18,
+    background: '#fff',
+    border: `2px solid ${theme.palette.primary.light}`,
+    borderRadius: '50%',
+    color: theme.palette.primary.main,
+    textAlign: 'center',
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+  }
 })
 );
 
@@ -134,7 +150,7 @@ const Header: FC<Props> = ({ cart }) => {
   const classes = useStyles();
 
   const mdBreakpoint = 959
-  
+
   const toggleDrawerMenu = () => setIsDrawerMenu(!isDrawerMenu);
 
   const handleSearch = () => console.log(searchInputValue)
@@ -167,6 +183,7 @@ const Header: FC<Props> = ({ cart }) => {
     <div className={classes.cart}>
       <Link to='/cart'>
         <ShoppingCart />
+        {cart?.length > 0 && <div className={classes.mobileCartLength}>{cart?.length}</div>}
       </Link>
       {cart?.length ?
         <>

@@ -29,7 +29,6 @@ const App = () => {
   const classes = useStyles();
 
   const handleSetCart = (item: CartItem) => {
-    console.log("cartt", item)
     const updatedCart = [...cart, item]
     return setCart(updatedCart)
   }

@@ -47,5 +47,4 @@ const Cart: FC<Props> = ({ cart, m, p, boxClassName }) => {
   )
 }
 
-
 export default Cart
