@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { Collapse, Link as MaterialLink, fade, makeStyles, Typography } from "@material-ui/core";
+import { Collapse, fade, makeStyles, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     marginTop: 20,
     [theme.breakpoints.down("sm")]: {
-      // display: "block",
       justifyContent: "space-between",
     }
   },
@@ -134,6 +133,8 @@ const Header: FC<Props> = ({ cart }) => {
 
   const classes = useStyles();
 
+  const mdBreakpoint = 959
+  
   const toggleDrawerMenu = () => setIsDrawerMenu(!isDrawerMenu);
 
   const handleSearch = () => console.log(searchInputValue)
@@ -164,9 +165,9 @@ const Header: FC<Props> = ({ cart }) => {
 
   const renderCart = (
     <div className={classes.cart}>
-      <MaterialLink href='/cart'>
+      <Link to='/cart'>
         <ShoppingCart />
-      </MaterialLink>
+      </Link>
       {cart?.length ?
         <>
           <Typography color='primary'>
@@ -180,9 +181,9 @@ const Header: FC<Props> = ({ cart }) => {
           cart is empty
         </Typography>
       }
-      <MaterialLink href='/cart'>
+      <Link to='/cart'>
         <Button>Check out</Button>
-      </MaterialLink>
+      </Link>
     </div>
   )
 
@@ -201,7 +202,7 @@ const Header: FC<Props> = ({ cart }) => {
         {renderCart}
       </div>
       {
-        window.innerWidth > 959 ? (
+        window.innerWidth >= mdBreakpoint ? (
           renderMenu
         ) : (
             <Collapse in={isDrawerMenu}>

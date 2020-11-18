@@ -69,14 +69,14 @@ const Footer: FC<{}> = () => {
 
     return (
         <Grid container spacing={8} className={classes.footer}>
-            <Grid item xs={6} className={classes.description} >
+            <Grid item xs={12} md={6} className={classes.description} >
                 <img src={logo} alt='logo' />
                 <Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</Typography>
             </Grid>
-            <Grid item xs={3} className={classes.bestsellers}>
+            <Grid item xs={12} md={3} className={classes.bestsellers}>
                 <Typography variant='subtitle1'>Bestsellers</Typography>
                 <Grid container spacing={2}>
-                    <Grid item xs={6}>
+                    <Grid item xs={3} md={6}>
                         {renderBestsellersList([
                             { path: '#', text: 'A4' },
                             { path: '#', text: 'A5' },
@@ -84,7 +84,7 @@ const Footer: FC<{}> = () => {
                             { path: '#', text: 'Staplers' },
                         ])}
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={3} md={6}>
                         {renderBestsellersList([
                             { path: '#', text: 'A4-2' },
                             { path: '#', text: 'A5-2' },
@@ -94,7 +94,7 @@ const Footer: FC<{}> = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid item xs={3} className={classes.social}>
+            <Grid item xs={12} md={3} className={classes.social}>
                 <Typography variant='subtitle1'>We're social!</Typography>
                 {renderSocial()}
             </Grid>

@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import { ThemeProvider } from '@material-ui/core/styles'
 import { makeStyles } from "@material-ui/core";
 import theme from './theme'
-import AllProducts from "./pages/AllProducts"
 import Inspirations from "./pages/Inspirations"
 import About from "./pages/About"
+import AllProducts from "./pages/AllProducts"
+import Cart from "./pages/Cart"
 import { Header, Container, Footer } from "./components"
 import { CartItem } from "./utils/types"
 import './App.css';
@@ -27,6 +28,12 @@ const App = () => {
 
   const classes = useStyles();
 
+  const handleSetCart = (item: CartItem) => {
+    console.log("cartt", item)
+    const updatedCart = [...cart, item]
+    return setCart(updatedCart)
+  }
+
   return (
     <Router>
       <ThemeProvider theme={theme}>
@@ -37,8 +44,8 @@ const App = () => {
               <Switch>
                 <Route path="/inspirations" component={Inspirations} />
                 <Route path="/about" component={About} />
-                <Route path="/cart" render={() => <AllProducts cart={cart} />} />
-                <Route path="/" render={() => <AllProducts cart={cart} />} />
+                <Route path="/cart" render={() => <Cart cart={cart} />} />
+                <Route path="/" render={() => <AllProducts handleSetCart={handleSetCart} />} />
               </Switch>
             </Container>
           </div>

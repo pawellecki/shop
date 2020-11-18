@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '0 8px',
         transiiton: '0.3s',
         color: theme.palette.primary.main,
-        "&:hover": {
+        "&:hover, &:focus": {
             backgroundColor: theme.palette.primary.main
           }
     }

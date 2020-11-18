@@ -18,7 +18,10 @@ type Props = {
 const useStyles = makeStyles((theme) => ({
     paper: {
         height: '100%',
-        padding: theme.spacing(2)
+        padding: theme.spacing(2),
+        [theme.breakpoints.down("sm")]: {
+            height: 'auto',
+          }
     },
 }))
 
@@ -29,7 +32,7 @@ const PapersRow: FC<Props> = ({ config, m, p, boxClassName }) => {
         <Box m={m} p={p} className={boxClassName}>
             <Grid container spacing={2}>
                 {config.map(({ background, title, description }: ConfigPaper) =>
-                    <Grid key={title} item xs={4}>
+                    <Grid key={title} item xs={12} md={4}>
                         <Paper style={{ backgroundImage: `url(${background})` }} className={classes.paper}>
                             <Typography variant="h6">{title}</Typography>
                             <Typography>{description}</Typography>

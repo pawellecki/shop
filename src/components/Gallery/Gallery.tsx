@@ -13,7 +13,10 @@ type Props = {
 
 const useStyles = makeStyles((theme) => ({
     box: {
-        maxWidth: 300
+        maxWidth: 300,
+        [theme.breakpoints.down("sm")]: {
+            maxWidth: 'auto',
+          }
     },
     main: {
         width: '100%',

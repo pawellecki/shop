@@ -5,6 +5,6 @@ type Props = {
 }
 
 const About: FC<Props> = () =>
-  <div >about</div>
+  <div >about template</div>
 
 export default About

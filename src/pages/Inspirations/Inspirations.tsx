@@ -5,6 +5,6 @@ type Props = {
 }
 
 const Inspirations: FC<Props> = () =>
-  <div >inss</div>
+  <div >inspirations template</div>
 
   export default Inspirations
