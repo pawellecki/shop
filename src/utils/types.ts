@@ -1,5 +1,10 @@
-export type Routes = Array<{
+export type TextAndPath = Array<{
   text: string;
   path: string;
-  component: React.ReactNode;
 }>;
+
+export type CartItem = {
+  name: string
+  color: string
+  value: number
+}

@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 import { MenuList, MenuItem, makeStyles } from '@material-ui/core'
 import { NavLink } from 'react-router-dom'
-import { Routes } from "../../utils/types"
+import { TextAndPath } from "../../utils/types"
 
 type Props = {
-    config: Routes
+    config: TextAndPath
     className: any
 }
 
@@ -15,7 +15,11 @@ const useStyles = makeStyles((theme) => ({
     navLink: {
         width: '100%',
         padding: '0 8px',
-        color: theme.palette.grey[500]
+        transiiton: '0.3s',
+        color: theme.palette.primary.main,
+        "&:hover": {
+            backgroundColor: theme.palette.primary.main
+          }
     }
 }))
 

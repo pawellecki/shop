@@ -7,6 +7,8 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn'
 
 const useStyles = makeStyles((theme) => ({
     footer: {
+        width: '100%',
+        margin: 0,
         borderTop: `3px solid ${theme.palette.primary.light}`,
         padding: `0 ${theme.spacing(4)}px`,
         '& h6': {

@@ -4,6 +4,7 @@ import paper1 from "../../assets/paper1.jpg"
 import paper2 from "../../assets/paper2.jpg"
 import paper3 from "../../assets/paper3.jpg"
 import { Sidebar, Gallery, PapersRow } from "../../components"
+import { CartItem } from "../../utils/types"
 
 const papersRowConfig = [
     {
@@ -44,7 +45,11 @@ const sidebarConfig = [
     { path: '#', title: 'Armoire desks' },
 ]
 
-const AllProducts: FC = () =>
+type Props = {
+    cart: CartItem[]
+}
+
+const AllProducts: FC<Props> = ({ cart }) =>
     <Grid container spacing={2} >
         <Grid item xs={3} >
             <Sidebar config={sidebarConfig} />

@@ -16,12 +16,12 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         height: '100%',
         padding: theme.spacing(2),
-        backgroundColor: theme.palette.primary.light,
+        backgroundColor: theme.palette.secondary.light,
         '& li': {
             marginBottom: theme.spacing(1)
         },
         '& a': {
-            color: theme.palette.primary.contrastText,
+            color: theme.palette.secondary.contrastText,
             transition: '0.2s'
         }
     },
